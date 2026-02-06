@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Link, useLocation } from "react-router-dom";
 import LanguageSelector from "@/components/LanguageSelector";
 import { Menu, X, Scale } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar: React.FC = () => {
-  const { t, dir } = useLanguage();
+  const { t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -15,18 +17,19 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [location.pathname]);
+
   const navLinks = [
-    { label: t("nav_home"), href: "#home" },
-    { label: t("nav_about"), href: "#about" },
-    { label: t("nav_services"), href: "#services" },
-    { label: t("nav_contact"), href: "#contact" },
+    { label: t("nav_home"), to: "/" },
+    { label: t("nav_about"), to: "/about" },
+    { label: t("nav_services"), to: "/services" },
+    { label: t("nav_contact"), to: "/contact" },
   ];
 
-  const scrollTo = (href: string) => {
-    setMobileOpen(false);
-    const el = document.querySelector(href);
-    el?.scrollIntoView({ behavior: "smooth" });
-  };
+  const isActive = (path: string) => location.pathname === path;
 
   return (
     <nav
@@ -39,7 +42,7 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center gap-3 group">
             <div className="w-10 h-10 rounded-md bg-gradient-navy flex items-center justify-center shadow-gold">
               <Scale className="h-5 w-5 text-gold" />
             </div>
@@ -51,32 +54,36 @@ const Navbar: React.FC = () => {
                 Juridique
               </span>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop nav */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <button
-                key={link.href}
-                onClick={() => scrollTo(link.href)}
+              <Link
+                key={link.to}
+                to={link.to}
                 className={`text-sm font-medium transition-colors hover:text-accent ${
-                  scrolled ? "text-foreground/70" : "text-card-foreground/80"
+                  isActive(link.to)
+                    ? "text-accent"
+                    : scrolled
+                    ? "text-foreground/70"
+                    : "text-card-foreground/80"
                 }`}
               >
                 {link.label}
-              </button>
+              </Link>
             ))}
           </div>
 
           {/* Right side */}
           <div className="flex items-center gap-3">
             <LanguageSelector />
-            <button
-              onClick={() => scrollTo("#contact")}
+            <Link
+              to="/contact"
               className="hidden lg:inline-flex px-5 py-2.5 bg-accent text-accent-foreground rounded-md text-sm font-semibold transition-all hover:shadow-gold hover:scale-105"
             >
               {t("nav_consultation")}
-            </button>
+            </Link>
             <button
               className="lg:hidden p-2 text-foreground"
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -98,20 +105,24 @@ const Navbar: React.FC = () => {
           >
             <div className="container mx-auto px-4 py-4 flex flex-col gap-2">
               {navLinks.map((link) => (
-                <button
-                  key={link.href}
-                  onClick={() => scrollTo(link.href)}
-                  className="text-start py-3 px-4 rounded-md text-foreground/80 hover:bg-accent/10 hover:text-accent font-medium transition-colors"
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className={`text-start py-3 px-4 rounded-md font-medium transition-colors ${
+                    isActive(link.to)
+                      ? "bg-accent/10 text-accent"
+                      : "text-foreground/80 hover:bg-accent/10 hover:text-accent"
+                  }`}
                 >
                   {link.label}
-                </button>
+                </Link>
               ))}
-              <button
-                onClick={() => scrollTo("#contact")}
+              <Link
+                to="/contact"
                 className="mt-2 py-3 px-4 bg-accent text-accent-foreground rounded-md font-semibold text-center"
               >
                 {t("nav_consultation")}
-              </button>
+              </Link>
             </div>
           </motion.div>
         )}

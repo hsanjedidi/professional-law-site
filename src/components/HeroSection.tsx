@@ -1,15 +1,12 @@
 import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection: React.FC = () => {
   const { t } = useLanguage();
-
-  const scrollTo = (id: string) => {
-    document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
@@ -70,20 +67,20 @@ const HeroSection: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="mt-10 flex flex-wrap gap-4"
           >
-            <button
-              onClick={() => scrollTo("#contact")}
+            <Link
+              to="/contact"
               className="group flex items-center gap-2 px-8 py-4 bg-accent text-accent-foreground rounded-md font-semibold text-base transition-all hover:shadow-gold hover:scale-105"
             >
               <Phone className="h-4 w-4" />
               {t("hero_cta")}
-            </button>
-            <button
-              onClick={() => scrollTo("#services")}
+            </Link>
+            <Link
+              to="/services"
               className="group flex items-center gap-2 px-8 py-4 border-2 border-gold text-secondary rounded-md font-semibold text-base transition-all hover:bg-accent/10"
             >
               {t("hero_cta_secondary")}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl-flip" />
-            </button>
+            </Link>
           </motion.div>
         </div>
       </div>

@@ -1,19 +1,16 @@
 import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Link } from "react-router-dom";
 import { Scale } from "lucide-react";
 
 const Footer: React.FC = () => {
   const { t } = useLanguage();
 
-  const scrollTo = (id: string) => {
-    document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
-  };
-
   const quickLinks = [
-    { label: t("nav_home"), href: "#home" },
-    { label: t("nav_about"), href: "#about" },
-    { label: t("nav_services"), href: "#services" },
-    { label: t("nav_contact"), href: "#contact" },
+    { label: t("nav_home"), to: "/" },
+    { label: t("nav_about"), to: "/about" },
+    { label: t("nav_services"), to: "/services" },
+    { label: t("nav_contact"), to: "/contact" },
   ];
 
   const legalLinks = [
@@ -29,7 +26,7 @@ const Footer: React.FC = () => {
           <div className="grid md:grid-cols-3 gap-12">
             {/* Brand */}
             <div>
-              <div className="flex items-center gap-3 mb-4">
+              <Link to="/" className="flex items-center gap-3 mb-4">
                 <div className="w-10 h-10 rounded-md bg-accent/20 flex items-center justify-center">
                   <Scale className="h-5 w-5 text-accent" />
                 </div>
@@ -41,7 +38,7 @@ const Footer: React.FC = () => {
                     Juridique
                   </span>
                 </div>
-              </div>
+              </Link>
               <p className="text-secondary/50 text-sm leading-relaxed">
                 {t("footer_description")}
               </p>
@@ -54,13 +51,13 @@ const Footer: React.FC = () => {
               </h4>
               <div className="space-y-3">
                 {quickLinks.map((link) => (
-                  <button
-                    key={link.href}
-                    onClick={() => scrollTo(link.href)}
+                  <Link
+                    key={link.to}
+                    to={link.to}
                     className="block text-sm text-secondary/50 hover:text-accent transition-colors"
                   >
                     {link.label}
-                  </button>
+                  </Link>
                 ))}
               </div>
             </div>
