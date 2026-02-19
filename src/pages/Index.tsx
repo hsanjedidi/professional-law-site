@@ -3,6 +3,10 @@ import { Helmet } from "react-helmet-async";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection";
+import ServicesSection from "@/components/ServicesSection";
+import HomeWhySection from "@/components/HomeWhySection";
+import HomeCtaSection from "@/components/HomeCtaSection";
 import Footer from "@/components/Footer";
 
 const seoData = {
@@ -69,6 +73,10 @@ const Index: React.FC = () => {
       <Navbar />
       <main>
         <HeroSection />
+        <AboutSection />
+        <HomeWhySection />
+        <ServicesSection />
+        <HomeCtaSection />
       </main>
       <Footer />
     </>
