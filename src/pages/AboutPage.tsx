@@ -4,6 +4,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import Navbar from "@/components/Navbar";
 import AboutSection from "@/components/AboutSection";
 import Footer from "@/components/Footer";
+import PageHero from "@/components/PageHero";
 
 const seoData = {
   fr: {
@@ -21,7 +22,7 @@ const seoData = {
 };
 
 const AboutPage: React.FC = () => {
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
   const seo = seoData[language];
 
   return (
@@ -34,7 +35,12 @@ const AboutPage: React.FC = () => {
         <link rel="canonical" href="https://cabinet-juridique.fr/about" />
       </Helmet>
       <Navbar />
-      <main className="pt-20">
+      <main>
+        <PageHero
+          titleKey="page_hero_about_title"
+          subtitleKey="page_hero_about_subtitle"
+          breadcrumbLabel={t("nav_about")}
+        />
         <AboutSection />
       </main>
       <Footer />

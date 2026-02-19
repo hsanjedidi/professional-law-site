@@ -3,6 +3,27 @@ import React, { createContext, useContext, useState, useCallback } from "react";
 export type Language = "fr" | "en" | "ar";
 
 type TranslationKeys = {
+  // Page Hero titles
+  page_hero_about_title: string;
+  page_hero_about_subtitle: string;
+  page_hero_services_title: string;
+  page_hero_services_subtitle: string;
+  page_hero_contact_title: string;
+  page_hero_contact_subtitle: string;
+
+  // Home sections
+  home_why_title: string;
+  home_why_label: string;
+  home_why_1_title: string;
+  home_why_1_desc: string;
+  home_why_2_title: string;
+  home_why_2_desc: string;
+  home_why_3_title: string;
+  home_why_3_desc: string;
+  home_cta_title: string;
+  home_cta_subtitle: string;
+  home_cta_btn: string;
+
   // Navbar
   nav_home: string;
   nav_about: string;
@@ -80,6 +101,23 @@ type TranslationKeys = {
 
 const translations: Record<Language, TranslationKeys> = {
   fr: {
+    page_hero_about_title: "À Propos de Nous",
+    page_hero_about_subtitle: "Découvrez notre histoire, nos valeurs et notre engagement envers vos droits.",
+    page_hero_services_title: "Nos Services",
+    page_hero_services_subtitle: "Des expertises pointues pour défendre vos intérêts dans tous les domaines du droit.",
+    page_hero_contact_title: "Contactez-Nous",
+    page_hero_contact_subtitle: "Notre équipe est disponible pour répondre à toutes vos questions juridiques.",
+    home_why_label: "Pourquoi Nous Choisir",
+    home_why_title: "L'Excellence Juridique à Votre Service",
+    home_why_1_title: "Expertise Reconnue",
+    home_why_1_desc: "25 ans d'expérience dans tous les domaines du droit, avec une équipe de 15 avocats spécialisés.",
+    home_why_2_title: "Approche Personnalisée",
+    home_why_2_desc: "Chaque dossier est unique. Nous vous offrons un accompagnement sur mesure adapté à votre situation.",
+    home_why_3_title: "Résultats Prouvés",
+    home_why_3_desc: "98% de taux de satisfaction client. Votre succès est notre priorité absolue.",
+    home_cta_title: "Prêt à Défendre Vos Droits ?",
+    home_cta_subtitle: "Prenez rendez-vous dès aujourd'hui pour une consultation gratuite et confidentielle avec l'un de nos avocats experts.",
+    home_cta_btn: "Consultation Gratuite",
     nav_home: "Accueil",
     nav_about: "À Propos",
     nav_services: "Services",
@@ -160,6 +198,23 @@ const translations: Record<Language, TranslationKeys> = {
     footer_rights: "Tous droits réservés.",
   },
   en: {
+    page_hero_about_title: "About Us",
+    page_hero_about_subtitle: "Discover our history, values, and commitment to your rights.",
+    page_hero_services_title: "Our Services",
+    page_hero_services_subtitle: "Sharp expertise to defend your interests in all areas of law.",
+    page_hero_contact_title: "Contact Us",
+    page_hero_contact_subtitle: "Our team is available to answer all your legal questions.",
+    home_why_label: "Why Choose Us",
+    home_why_title: "Legal Excellence at Your Service",
+    home_why_1_title: "Recognized Expertise",
+    home_why_1_desc: "25 years of experience across all areas of law, with a team of 15 specialized lawyers.",
+    home_why_2_title: "Personalized Approach",
+    home_why_2_desc: "Every case is unique. We offer tailored support adapted to your specific situation.",
+    home_why_3_title: "Proven Results",
+    home_why_3_desc: "98% client satisfaction rate. Your success is our absolute priority.",
+    home_cta_title: "Ready to Defend Your Rights?",
+    home_cta_subtitle: "Book an appointment today for a free and confidential consultation with one of our expert lawyers.",
+    home_cta_btn: "Free Consultation",
     nav_home: "Home",
     nav_about: "About",
     nav_services: "Services",
@@ -240,6 +295,23 @@ const translations: Record<Language, TranslationKeys> = {
     footer_rights: "All rights reserved.",
   },
   ar: {
+    page_hero_about_title: "من نحن",
+    page_hero_about_subtitle: "اكتشفوا تاريخنا وقيمنا والتزامنا بحقوقكم.",
+    page_hero_services_title: "خدماتنا",
+    page_hero_services_subtitle: "خبرة متميزة للدفاع عن مصالحكم في جميع مجالات القانون.",
+    page_hero_contact_title: "اتصل بنا",
+    page_hero_contact_subtitle: "فريقنا متاح للإجابة على جميع أسئلتكم القانونية.",
+    home_why_label: "لماذا تختارنا",
+    home_why_title: "التميز القانوني في خدمتكم",
+    home_why_1_title: "خبرة معترف بها",
+    home_why_1_desc: "25 عامًا من الخبرة في جميع مجالات القانون مع فريق من 15 محامٍ متخصص.",
+    home_why_2_title: "نهج شخصي",
+    home_why_2_desc: "كل قضية فريدة. نقدم لكم دعمًا مخصصًا يتناسب مع وضعكم الخاص.",
+    home_why_3_title: "نتائج مثبتة",
+    home_why_3_desc: "98% معدل رضا العملاء. نجاحكم هو أولويتنا المطلقة.",
+    home_cta_title: "مستعدون للدفاع عن حقوقكم؟",
+    home_cta_subtitle: "احجزوا موعدًا اليوم لاستشارة مجانية وسرية مع أحد محامينا الخبراء.",
+    home_cta_btn: "استشارة مجانية",
     nav_home: "الرئيسية",
     nav_about: "من نحن",
     nav_services: "خدماتنا",
