@@ -11,35 +11,33 @@ import Footer from "@/components/Footer";
 
 const seoData = {
   fr: {
-    title: "Cabinet Juridique | Avocats d'Excellence à Paris",
-    description: "Cabinet d'avocats à Paris spécialisé en droit des affaires, droit de la famille, droit pénal et droit immobilier. Plus de 25 ans d'expérience. Consultation gratuite.",
-    keywords: "avocat paris, cabinet avocats, droit des affaires, droit famille, avocat pénal, droit immobilier, consultation juridique",
+    title: "Me. Yosr Ben Attia | Avocate au Barreau de Tunis",
+    description: "Maître Yosr Ben Attia, avocate à Tunis spécialisée en droit des affaires, droit bancaire, droit numérique, protection des données, arbitrage et médiation.",
+    keywords: "avocate tunis, droit des affaires, droit bancaire, protection des données, arbitrage, médiation, droit numérique, Yosr Ben Attia",
   },
   en: {
-    title: "Cabinet Juridique | Excellence Law Firm in Paris",
-    description: "Paris law firm specializing in business law, family law, criminal law, and real estate law. Over 25 years of experience. Free consultation.",
-    keywords: "paris lawyer, law firm, business law, family law, criminal lawyer, real estate law, legal consultation",
+    title: "Me. Yosr Ben Attia | Lawyer at the Tunis Bar",
+    description: "Maître Yosr Ben Attia, Tunis-based lawyer specializing in business law, banking law, digital law, data protection, arbitration and mediation.",
+    keywords: "tunis lawyer, business law, banking law, data protection, arbitration, mediation, digital law, Yosr Ben Attia",
   },
   ar: {
-    title: "المكتب القانوني | محامون متميزون في باريس",
-    description: "مكتب محاماة في باريس متخصص في قانون الأعمال وقانون الأسرة والقانون الجنائي والقانون العقاري. أكثر من 25 عامًا من الخبرة.",
-    keywords: "محامي باريس, مكتب محاماة, قانون الأعمال, قانون الأسرة, محامي جنائي",
+    title: "الأستاذة يسر بن عطية | محامية بهيئة المحامين بتونس",
+    description: "الأستاذة يسر بن عطية، محامية في تونس متخصصة في قانون الأعمال والقانون البنكي والقانون الرقمي وحماية البيانات والتحكيم والوساطة.",
+    keywords: "محامية تونس, قانون الأعمال, قانون بنكي, حماية البيانات, تحكيم, وساطة",
   },
 };
 
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "LegalService",
-  name: "Cabinet Juridique",
-  description: "Cabinet d'avocats d'excellence à Paris depuis 1998",
-  url: "https://cabinet-juridique.fr",
-  telephone: "+33142680000",
+  name: "Me. Yosr Ben Attia",
+  description: "Avocate au Barreau de Tunis - Droit des affaires, bancaire, numérique et résolution des litiges",
+  url: "https://yosrbenattia.tn",
+  telephone: "+21671840381",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "123 Avenue des Champs-Élysées",
-    addressLocality: "Paris",
-    postalCode: "75008",
-    addressCountry: "FR",
+    addressLocality: "Tunis",
+    addressCountry: "TN",
   },
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
@@ -47,8 +45,7 @@ const structuredData = {
     opens: "09:00",
     closes: "18:00",
   },
-  priceRange: "$$",
-  areaServed: "Paris, France",
+  areaServed: "Tunisia",
 };
 
 const Index: React.FC = () => {
@@ -65,7 +62,7 @@ const Index: React.FC = () => {
         <meta property="og:title" content={seo.title} />
         <meta property="og:description" content={seo.description} />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://cabinet-juridique.fr" />
+        <link rel="canonical" href="https://yosrbenattia.tn" />
         <script type="application/ld+json">
           {JSON.stringify(structuredData)}
         </script>

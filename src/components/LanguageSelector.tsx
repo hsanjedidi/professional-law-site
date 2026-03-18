@@ -5,7 +5,7 @@ import { Globe, ChevronDown } from "lucide-react";
 const languages: { code: Language; label: string; flag: string }[] = [
   { code: "fr", label: "Français", flag: "🇫🇷" },
   { code: "en", label: "English", flag: "🇬🇧" },
-  { code: "ar", label: "العربية", flag: "🇸🇦" },
+  { code: "ar", label: "العربية", flag: "🇹🇳" },
 ];
 
 const LanguageSelector: React.FC = () => {
@@ -31,8 +31,7 @@ const LanguageSelector: React.FC = () => {
         onClick={() => setOpen(!open)}
         className="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-accent/10 text-foreground/80 hover:text-foreground"
       >
-        <Globe className="h-4 w-4" />
-        <span>{current.flag}</span>
+        <span className="text-lg">{current.flag}</span>
         <span className="hidden sm:inline">{current.label}</span>
         <ChevronDown className={`h-3 w-3 transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
@@ -52,7 +51,7 @@ const LanguageSelector: React.FC = () => {
                   : "text-foreground/80"
               }`}
             >
-              <span>{lang.flag}</span>
+              <span className="text-lg">{lang.flag}</span>
               <span>{lang.label}</span>
             </button>
           ))}

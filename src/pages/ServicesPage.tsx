@@ -8,16 +8,16 @@ import PageHero from "@/components/PageHero";
 
 const seoData = {
   fr: {
-    title: "Services | Cabinet Juridique - Domaines d'Expertise",
-    description: "Nos domaines d'expertise : droit des affaires, droit de la famille, droit pénal, droit immobilier, droit du travail et droit international.",
+    title: "Domaines d'Intervention | Me. Yosr Ben Attia",
+    description: "Nos domaines d'expertise : arbitrage, droit bancaire, protection des données, droit numérique, droit des sociétés, droit foncier, environnement, associations, assurances et droit du travail.",
   },
   en: {
-    title: "Services | Cabinet Juridique - Areas of Expertise",
-    description: "Our areas of expertise: business law, family law, criminal law, real estate law, labor law, and international law.",
+    title: "Practice Areas | Me. Yosr Ben Attia",
+    description: "Our areas of expertise: arbitration, banking law, data protection, digital law, corporate law, real estate, environmental law, NGO law, insurance and labor law.",
   },
   ar: {
-    title: "خدماتنا | المكتب القانوني - مجالات الخبرة",
-    description: "مجالات خبرتنا: قانون الأعمال، قانون الأسرة، القانون الجنائي، القانون العقاري، قانون العمل والقانون الدولي.",
+    title: "مجالات التدخل | الأستاذة يسر بن عطية",
+    description: "مجالات خبرتنا: التحكيم، القانون البنكي، حماية البيانات، القانون الرقمي، قانون الشركات، القانون العقاري، قانون البيئة، قانون الجمعيات، التأمين وقانون العمل.",
   },
 };
 
@@ -32,7 +32,7 @@ const ServicesPage: React.FC = () => {
         <meta name="description" content={seo.description} />
         <meta property="og:title" content={seo.title} />
         <meta property="og:description" content={seo.description} />
-        <link rel="canonical" href="https://cabinet-juridique.fr/services" />
+        <link rel="canonical" href="https://yosrbenattia.tn/services" />
       </Helmet>
       <Navbar />
       <main>

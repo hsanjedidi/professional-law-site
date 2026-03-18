@@ -16,30 +16,21 @@ const PageHero: React.FC<PageHeroProps> = ({ titleKey, subtitleKey, breadcrumbLa
 
   return (
     <section className="relative min-h-[42vh] flex items-end overflow-hidden">
-      {/* Background */}
       <div className="absolute inset-0">
-        <img
-          src={heroBg}
-          alt="Hero background"
-          className="w-full h-full object-cover"
-        />
+        <img src={heroBg} alt="Hero background" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-hero opacity-92" />
         <div className="absolute inset-0 bg-gradient-to-r from-navy-dark/95 via-navy/80 to-navy/60" />
       </div>
 
-      {/* Decorative gold line top */}
       <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
 
-      {/* Geometric decoration */}
       <div className="absolute end-0 top-0 w-1/3 h-full opacity-10">
         <div className="w-full h-full bg-gradient-to-l from-accent/20 to-transparent" />
       </div>
       <div className="absolute top-16 end-16 w-40 h-40 rounded-full border border-accent/10" />
       <div className="absolute top-8 end-8 w-64 h-64 rounded-full border border-accent/5" />
 
-      {/* Content */}
       <div className="container mx-auto px-4 lg:px-8 relative z-10 pb-14 pt-32">
-        {/* Breadcrumb */}
         <motion.nav
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -53,7 +44,6 @@ const PageHero: React.FC<PageHeroProps> = ({ titleKey, subtitleKey, breadcrumbLa
           <span className="text-accent font-medium">{breadcrumbLabel}</span>
         </motion.nav>
 
-        {/* Label accent line */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -62,11 +52,10 @@ const PageHero: React.FC<PageHeroProps> = ({ titleKey, subtitleKey, breadcrumbLa
         >
           <div className="h-px w-10 bg-accent" />
           <span className="text-accent text-xs font-semibold tracking-widest uppercase">
-            Cabinet Juridique
+            Me. Yosr Ben Attia
           </span>
         </motion.div>
 
-        {/* Title */}
         <motion.h1
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
@@ -76,7 +65,6 @@ const PageHero: React.FC<PageHeroProps> = ({ titleKey, subtitleKey, breadcrumbLa
           {t(titleKey)}
         </motion.h1>
 
-        {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
@@ -86,7 +74,6 @@ const PageHero: React.FC<PageHeroProps> = ({ titleKey, subtitleKey, breadcrumbLa
           {t(subtitleKey)}
         </motion.p>
 
-        {/* Bottom gold bar */}
         <motion.div
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
@@ -95,7 +82,6 @@ const PageHero: React.FC<PageHeroProps> = ({ titleKey, subtitleKey, breadcrumbLa
         />
       </div>
 
-      {/* Bottom decorative line */}
       <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-accent/25 to-transparent" />
     </section>
   );

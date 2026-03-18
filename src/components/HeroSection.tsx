@@ -2,11 +2,18 @@ import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight, Phone, CheckCircle } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection: React.FC = () => {
   const { t } = useLanguage();
+
+  const trustItems = [
+    t("hero_trust_1"),
+    t("hero_trust_2"),
+    t("hero_trust_3"),
+    t("hero_trust_4"),
+  ];
 
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
@@ -36,7 +43,7 @@ const HeroSection: React.FC = () => {
             <div className="flex items-center gap-3 mb-6">
               <div className="h-px w-12 bg-accent" />
               <span className="text-accent text-sm font-semibold tracking-widest uppercase">
-                Cabinet d'Avocats
+                {t("hero_label")}
               </span>
             </div>
           </motion.div>
@@ -60,6 +67,21 @@ const HeroSection: React.FC = () => {
           >
             {t("hero_subtitle")}
           </motion.p>
+
+          {/* Trust highlights */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="mt-6 flex flex-wrap gap-4"
+          >
+            {trustItems.map((item, i) => (
+              <div key={i} className="flex items-center gap-2 text-secondary/60 text-sm">
+                <CheckCircle className="h-4 w-4 text-accent" />
+                <span>{item}</span>
+              </div>
+            ))}
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}

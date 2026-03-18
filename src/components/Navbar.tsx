@@ -17,7 +17,6 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setMobileOpen(false);
   }, [location.pathname]);
@@ -48,10 +47,10 @@ const Navbar: React.FC = () => {
             </div>
             <div>
               <span className={`text-lg font-heading font-bold ${scrolled ? "text-foreground" : "text-secondary"}`}>
-                Cabinet
+                Me. Yosr
               </span>
               <span className="text-gradient-gold text-lg font-heading font-bold ms-1">
-                Juridique
+                Ben Attia
               </span>
             </div>
           </Link>
