@@ -3,8 +3,6 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
 import { Award, Users, TrendingUp } from "lucide-react";
 
-const iconMap = [Award, Users, TrendingUp];
-
 const HomeWhySection: React.FC = () => {
   const { t } = useLanguage();
 
@@ -18,7 +16,6 @@ const HomeWhySection: React.FC = () => {
     <section className="py-24 bg-background overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -38,7 +35,6 @@ const HomeWhySection: React.FC = () => {
             </h2>
           </motion.div>
 
-          {/* Cards */}
           <div className="grid md:grid-cols-3 gap-8">
             {reasons.map((reason, i) => (
               <motion.div
@@ -49,7 +45,6 @@ const HomeWhySection: React.FC = () => {
                 transition={{ duration: 0.6, delay: i * 0.15 }}
                 className="relative group"
               >
-                {/* Number */}
                 <div className="absolute -top-6 -start-4 text-8xl font-heading font-bold text-accent/5 select-none pointer-events-none">
                   {String(i + 1).padStart(2, "0")}
                 </div>

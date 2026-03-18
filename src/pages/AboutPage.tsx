@@ -8,16 +8,16 @@ import PageHero from "@/components/PageHero";
 
 const seoData = {
   fr: {
-    title: "À Propos | Cabinet Juridique - Avocats à Paris",
-    description: "Découvrez notre cabinet d'avocats fondé en 1998. Plus de 25 ans d'expérience, 2500+ dossiers traités, 15 avocats experts au service de vos droits.",
+    title: "À Propos | Me. Yosr Ben Attia - Avocate à Tunis",
+    description: "Parcours professionnel de Maître Yosr Ben Attia, avocate au Barreau de Tunis depuis 2013. Expérience en conformité bancaire, enseignement universitaire et droit des affaires.",
   },
   en: {
-    title: "About Us | Cabinet Juridique - Law Firm in Paris",
-    description: "Discover our law firm founded in 1998. Over 25 years of experience, 2500+ cases handled, 15 expert lawyers at the service of your rights.",
+    title: "About | Me. Yosr Ben Attia - Lawyer in Tunis",
+    description: "Professional background of Maître Yosr Ben Attia, lawyer at the Tunis Bar since 2013. Experience in banking compliance, academic teaching and business law.",
   },
   ar: {
-    title: "من نحن | المكتب القانوني - محامون في باريس",
-    description: "اكتشفوا مكتبنا القانوني الذي تأسس عام 1998. أكثر من 25 عامًا من الخبرة و2500+ قضية معالجة.",
+    title: "من نحن | الأستاذة يسر بن عطية - محامية في تونس",
+    description: "المسيرة المهنية للأستاذة يسر بن عطية، محامية بهيئة المحامين بتونس منذ 2013. خبرة في الامتثال البنكي والتدريس الجامعي وقانون الأعمال.",
   },
 };
 
@@ -32,7 +32,7 @@ const AboutPage: React.FC = () => {
         <meta name="description" content={seo.description} />
         <meta property="og:title" content={seo.title} />
         <meta property="og:description" content={seo.description} />
-        <link rel="canonical" href="https://cabinet-juridique.fr/about" />
+        <link rel="canonical" href="https://yosrbenattia.tn/about" />
       </Helmet>
       <Navbar />
       <main>

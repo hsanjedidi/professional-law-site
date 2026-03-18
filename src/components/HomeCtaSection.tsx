@@ -9,11 +9,9 @@ const HomeCtaSection: React.FC = () => {
 
   return (
     <section className="relative py-28 overflow-hidden bg-gradient-navy">
-      {/* Decorative blobs */}
       <div className="absolute top-0 start-0 w-80 h-80 rounded-full bg-accent/5 blur-3xl -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 end-0 w-96 h-96 rounded-full bg-accent/5 blur-3xl translate-x-1/3 translate-y-1/3" />
 
-      {/* Animated gold lines */}
       <motion.div
         initial={{ scaleX: 0 }}
         whileInView={{ scaleX: 1 }}
@@ -40,7 +38,7 @@ const HomeCtaSection: React.FC = () => {
             <div className="flex items-center justify-center gap-3 mb-6">
               <div className="h-px w-10 bg-accent" />
               <span className="text-accent text-xs font-semibold tracking-widest uppercase">
-                Cabinet Juridique
+                Me. Yosr Ben Attia
               </span>
               <div className="h-px w-10 bg-accent" />
             </div>

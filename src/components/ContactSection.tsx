@@ -1,32 +1,17 @@
 import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { MapPin, Phone, Smartphone, Mail, Clock, Send } from "lucide-react";
 
 const ContactSection: React.FC = () => {
   const { t } = useLanguage();
 
   const contactInfo = [
-    {
-      icon: MapPin,
-      title: t("contact_address_title"),
-      value: t("contact_address"),
-    },
-    {
-      icon: Phone,
-      title: t("contact_phone_title"),
-      value: t("contact_phone_value"),
-    },
-    {
-      icon: Mail,
-      title: t("contact_email_title"),
-      value: t("contact_email_value"),
-    },
-    {
-      icon: Clock,
-      title: t("contact_hours_title"),
-      value: t("contact_hours_value"),
-    },
+    { icon: MapPin, title: t("contact_address_title"), value: t("contact_address") },
+    { icon: Phone, title: t("contact_phone_title"), value: t("contact_phone_value"), href: "tel:+21671840381" },
+    { icon: Smartphone, title: t("contact_mobile_title"), value: t("contact_mobile_value"), href: "tel:+21620575291" },
+    { icon: Mail, title: t("contact_email_title"), value: t("contact_email_value"), href: "mailto:yosr.benattia@gnet.tn" },
+    { icon: Clock, title: t("contact_hours_title"), value: t("contact_hours_value") },
   ];
 
   return (
@@ -135,7 +120,7 @@ const ContactSection: React.FC = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="lg:col-span-2 space-y-6"
+              className="lg:col-span-2 space-y-5"
             >
               {contactInfo.map((info, i) => (
                 <div
@@ -149,9 +134,15 @@ const ContactSection: React.FC = () => {
                     <h4 className="text-sm font-semibold text-foreground mb-1">
                       {info.title}
                     </h4>
-                    <p className="text-sm text-muted-foreground whitespace-pre-line">
-                      {info.value}
-                    </p>
+                    {info.href ? (
+                      <a href={info.href} className="text-sm text-muted-foreground hover:text-accent transition-colors">
+                        {info.value}
+                      </a>
+                    ) : (
+                      <p className="text-sm text-muted-foreground whitespace-pre-line">
+                        {info.value}
+                      </p>
+                    )}
                   </div>
                 </div>
               ))}
