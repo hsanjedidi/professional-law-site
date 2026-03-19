@@ -38,12 +38,47 @@ const AboutSection: React.FC = () => {
           </motion.div>
 
           <div className="grid lg:grid-cols-2 gap-16 items-start">
-            {/* Text */}
+            {/* Left: Photo + Stats */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
+              className="space-y-8"
+            >
+              <div className="relative rounded-2xl overflow-hidden shadow-xl border border-border">
+                <img
+                  src={yosrPhoto}
+                  alt="Me. Yosr Ben Attia - Avocate à Tunis"
+                  className="w-full h-auto object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
+              </div>
+
+              {/* Stats grid */}
+              <div className="grid grid-cols-2 gap-4">
+                {stats.map((stat, i) => (
+                  <div
+                    key={i}
+                    className="p-5 rounded-lg bg-card border border-border hover:border-accent/30 transition-colors"
+                  >
+                    <div className="text-2xl lg:text-3xl font-heading font-bold text-gradient-gold mb-1">
+                      {t(stat.valueKey)}
+                    </div>
+                    <div className="text-sm text-muted-foreground font-medium">
+                      {t(stat.labelKey)}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Right: Text + Details */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
             >
               <h2 className="text-3xl lg:text-4xl font-heading font-bold text-foreground leading-tight mb-6">
                 {t("about_title")}
@@ -77,29 +112,6 @@ const AboutSection: React.FC = () => {
                   </motion.div>
                 ))}
               </div>
-            </motion.div>
-
-            {/* Stats grid */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="grid grid-cols-2 gap-6"
-            >
-              {stats.map((stat, i) => (
-                <div
-                  key={i}
-                  className="p-6 rounded-lg bg-card border border-border hover:border-accent/30 transition-colors group"
-                >
-                  <div className="text-3xl lg:text-4xl font-heading font-bold text-gradient-gold mb-2">
-                    {t(stat.valueKey)}
-                  </div>
-                  <div className="text-sm text-muted-foreground font-medium">
-                    {t(stat.labelKey)}
-                  </div>
-                </div>
-              ))}
             </motion.div>
           </div>
         </div>
