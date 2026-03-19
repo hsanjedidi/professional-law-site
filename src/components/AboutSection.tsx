@@ -2,6 +2,7 @@ import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
 import { Briefcase, GraduationCap, Languages } from "lucide-react";
+import yosrPhoto from "@/assets/yosr-ben-attia.jpg";
 
 const stats = [
   { valueKey: "about_stat_1_value", labelKey: "about_stat_1_label" },
