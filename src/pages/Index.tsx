@@ -55,7 +55,7 @@ const Index: React.FC = () => {
   return (
     <>
       <Helmet>
-        <html lang={language} dir={language === "ar" ? "rtl" : "ltr"} />
+       
         <title>{seo.title}</title>
         <meta name="description" content={seo.description} />
         <meta name="keywords" content={seo.keywords} />

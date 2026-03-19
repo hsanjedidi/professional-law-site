@@ -41,17 +41,14 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
+          {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-md bg-gradient-navy flex items-center justify-center shadow-gold border border-accent/20">
-              <Scale className="h-5 w-5 text-accent" />
-            </div>
-            <div>
-              <span className={`text-lg font-heading font-bold ${scrolled ? "text-foreground" : "text-secondary"}`}>
-                Me. Yosr
-              </span>
-              <span className="text-gradient-gold text-lg font-heading font-bold ms-1">
-                Ben Attia
-              </span>
+            <div className="w-auto h-48  transition-all duration-300">
+              <img
+                src={scrolled ? "/logo-Photoroom.png" : "/logo.png"}
+                alt="Logo Me. Yosr Ben Attia"
+                className="h-full w-auto object-contain transition-opacity duration-300"
+              />
             </div>
           </Link>
 
@@ -61,12 +58,12 @@ const Navbar: React.FC = () => {
               <Link
                 key={link.to}
                 to={link.to}
-                className={`text-sm font-semibold tracking-wide transition-colors hover:text-accent ${
+                className={`text-sm font-semibold  tracking-wide transition-colors hover:text-accent ${
                   isActive(link.to)
                     ? "text-accent"
                     : scrolled
-                    ? "text-foreground/80"
-                    : "text-secondary/90"
+                      ? "text-foreground/80"
+                      : "text-secondary/90"
                 }`}
               >
                 {link.label}
@@ -87,7 +84,11 @@ const Navbar: React.FC = () => {
               className={`lg:hidden p-2 ${scrolled ? "text-foreground" : "text-secondary"}`}
               onClick={() => setMobileOpen(!mobileOpen)}
             >
-              {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {mobileOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </button>
           </div>
         </div>

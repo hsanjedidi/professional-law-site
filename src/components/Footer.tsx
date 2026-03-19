@@ -26,19 +26,17 @@ const Footer: React.FC = () => {
           <div className="grid md:grid-cols-4 gap-12">
             {/* Brand */}
             <div className="md:col-span-2">
-              <Link to="/" className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-md bg-accent/20 flex items-center justify-center">
-                  <Scale className="h-5 w-5 text-accent" />
-                </div>
-                <div>
-                  <span className="text-lg font-heading font-bold text-secondary">
-                    Me. Yosr
-                  </span>
-                  <span className="text-gradient-gold text-lg font-heading font-bold ms-1">
-                    Ben Attia
-                  </span>
-                </div>
-              </Link>
+         <Link to="/" className="flex items-center gap-3 group">
+         <div className="w-auto h-48 ">
+           <img
+             src="/logo.png"
+             alt="Logo Me. Yosr Ben Attia"
+             className="w-full h-full object-cover"
+           />
+         </div>
+        
+       
+       </Link>
               <p className="text-secondary/50 text-sm leading-relaxed mb-4">
                 {t("footer_description")}
               </p>

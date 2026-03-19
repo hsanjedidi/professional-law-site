@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useLanguage, Language } from "@/contexts/LanguageContext";
-import { Globe, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 const languages: { code: Language; label: string; flag: string }[] = [
-  { code: "fr", label: "Français", flag: "🇫🇷" },
-  { code: "en", label: "English", flag: "🇬🇧" },
-  { code: "ar", label: "العربية", flag: "🇹🇳" },
+  { code: "fr", label: "Français", flag: "/flags/fr.png" },
+  { code: "en", label: "English", flag: "/flags/en.png" },
+  { code: "ar", label: "العربية", flag: "/flags/ar.png" },
 ];
 
 const LanguageSelector: React.FC = () => {
@@ -29,9 +29,9 @@ const LanguageSelector: React.FC = () => {
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors hover:bg-accent/10 text-foreground/80 hover:text-foreground"
+        className="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors bg-accent hover:bg-accent/10 text-foreground/80 hover:text-foreground"
       >
-        <span className="text-lg">{current.flag}</span>
+        <img src={current.flag} alt={current.label} className="w-5 h-5 rounded-sm object-cover" />
         <span className="hidden sm:inline">{current.label}</span>
         <ChevronDown className={`h-3 w-3 transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
@@ -51,7 +51,7 @@ const LanguageSelector: React.FC = () => {
                   : "text-foreground/80"
               }`}
             >
-              <span className="text-lg">{lang.flag}</span>
+              <img src={lang.flag} alt={lang.label} className="w-5 h-5 rounded-sm object-cover" />
               <span>{lang.label}</span>
             </button>
           ))}
