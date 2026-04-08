@@ -1,0 +1,17 @@
+:3060 {
+
+    # -----------------------
+    # Web SPA
+    # -----------------------
+    handle {
+        root * /srv/web
+        encode gzip
+        file_server
+        try_files {path} /index.html
+    }
+	
+    log {
+		level ERROR
+        format console
+    }
+}

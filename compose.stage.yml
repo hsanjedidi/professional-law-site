@@ -1,0 +1,19 @@
+services:
+  proxy:
+    container_name: yosrbenattia-reverse-proxy
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    restart: unless-stopped
+    ports:
+      - 3060:3060
+    volumes:
+      - ./Caddyfile.stage:/etc/caddy/Caddyfile
+      - ./data:/data
+      - ./config:/config
+    networks:
+      - default
+
+volumes:
+  data:
+  config:
