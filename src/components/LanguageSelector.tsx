@@ -29,7 +29,7 @@ const LanguageSelector: React.FC = () => {
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors bg-accent hover:bg-accent/10 text-foreground/80 hover:text-foreground"
+        className="flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors bg-accent hover:bg-accent text-foreground/80 hover:text-foreground"
       >
         <img src={current.flag} alt={current.label} className="w-5 h-5 rounded-sm object-cover" />
         <span className="hidden sm:inline">{current.label}</span>

@@ -7,11 +7,34 @@ const ContactSection: React.FC = () => {
   const { t } = useLanguage();
 
   const contactInfo = [
-    { icon: MapPin, title: t("contact_address_title"), value: t("contact_address") },
-    { icon: Phone, title: t("contact_phone_title"), value: t("contact_phone_value"), href: "tel:+21671840381" },
-    { icon: Smartphone, title: t("contact_mobile_title"), value: t("contact_mobile_value"), href: "tel:+21620575291" },
-    { icon: Mail, title: t("contact_email_title"), value: t("contact_email_value"), href: "mailto:yosr.benattia@gnet.tn" },
-    { icon: Clock, title: t("contact_hours_title"), value: t("contact_hours_value") },
+    {
+      icon: MapPin,
+      title: t("contact_address_title"),
+      value: t("contact_address"),
+    },
+    {
+      icon: Phone,
+      title: t("contact_phone_title"),
+      value: t("contact_phone_value"),
+      href: "tel:+21671840381",
+    },
+    {
+      icon: Smartphone,
+      title: t("contact_mobile_title"),
+      value: t("contact_mobile_value"),
+      href: "tel:+21620575291",
+    },
+    {
+      icon: Mail,
+      title: t("contact_email_title"),
+      value: t("contact_email_value"),
+      href: "mailto:yosr.benattia@gnet.tn",
+    },
+    {
+      icon: Clock,
+      title: t("contact_hours_title"),
+      value: t("contact_hours_value"),
+    },
   ];
 
   return (
@@ -135,7 +158,12 @@ const ContactSection: React.FC = () => {
                       {info.title}
                     </h4>
                     {info.href ? (
-                      <a href={info.href} className="text-sm text-muted-foreground hover:text-accent transition-colors">
+                      <a
+                        href={info.href}
+                        // Ajout de dir="ltr" et inline-block pour stabiliser l'affichage
+                        className="text-sm text-muted-foreground hover:text-accent transition-colors inline-block"
+                        dir="ltr"
+                      >
                         {info.value}
                       </a>
                     ) : (

@@ -8,7 +8,7 @@ const HomeCtaSection: React.FC = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="relative py-28 overflow-hidden bg-gradient-navy">
+    <section className="relative py-28 overflow-hidden bg-white">
       <div className="absolute top-0 start-0 w-80 h-80 rounded-full bg-accent/5 blur-3xl -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 end-0 w-96 h-96 rounded-full bg-accent/5 blur-3xl translate-x-1/3 translate-y-1/3" />
 
@@ -42,10 +42,10 @@ const HomeCtaSection: React.FC = () => {
               </span>
               <div className="h-px w-10 bg-accent" />
             </div>
-            <h2 className="text-4xl lg:text-5xl font-heading font-bold text-secondary mb-6 leading-tight">
+            <h2 className="text-4xl lg:text-5xl text-black font-heading font-bold text-secondary mb-6 leading-tight">
               {t("home_cta_title")}
             </h2>
-            <p className="text-secondary/60 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
+            <p className="text-blue-950 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
               {t("home_cta_subtitle")}
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
@@ -58,7 +58,7 @@ const HomeCtaSection: React.FC = () => {
               </Link>
               <Link
                 to="/services"
-                className="group flex items-center gap-2 px-8 py-4 border-2 border-gold text-secondary rounded-md font-semibold text-base transition-all hover:bg-accent/10"
+                className="group flex items-center gap-2 px-8 py-4 bg-accent text-accent-foreground rounded-md font-semibold text-base transition-all hover:shadow-gold hover:scale-105"
               >
                 {t("hero_cta_secondary")}
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl-flip" />

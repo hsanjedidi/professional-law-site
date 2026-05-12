@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
 import {
@@ -12,7 +12,6 @@ import {
   Users,
   Shield,
   Gavel,
-  ArrowRight,
 } from "lucide-react";
 
 const services = [
@@ -28,61 +27,191 @@ const services = [
   { titleKey: "service_10_title", descKey: "service_10_desc", icon: Gavel },
 ] as const;
 
+/* ─── Thin decorative corner SVG ─────────────────────────────────── */
+const CornerAccent: React.FC<{
+  className?: string;
+  flip?: boolean;
+  style?: React.CSSProperties;
+}> = ({ className = "", flip = false, style }) => (
+  <svg
+    viewBox="0 0 40 40"
+    fill="none"
+    className={className}
+    style={{ ...(flip ? { transform: "rotate(180deg)" } : {}), ...style }}
+  >
+    <path
+      d="M2 38 L2 2 L38 2"
+      stroke="#b8973a"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+    />
+  </svg>
+);
+
+/* ─── Card component ─────────────────────────────────────────────── */
+const ServiceCard: React.FC<{
+  service: (typeof services)[number];
+  i: number;
+  hovered: number | null;
+  setHovered: (v: number | null) => void;
+  t: (key: string) => string;
+  style?: React.CSSProperties;
+}> = ({ service, i, hovered, setHovered, t, style }) => {
+  const isHovered = hovered === i;
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 32 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.55, delay: i * 0.06 }}
+      onMouseEnter={() => setHovered(i)}
+      onMouseLeave={() => setHovered(null)}
+      // AJOUT : items-center et text-center pour le centrage global
+      className="relative group cursor-default flex flex-col items-center text-center"
+      style={{
+        background: isHovered
+          ? "linear-gradient(145deg, rgba(184,151,58,0.12) 0%, rgba(20,26,40,0.98) 100%)"
+          : "linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%)",
+        border: isHovered
+          ? "0.5px solid rgba(184,151,58,0.5)"
+          : "0.5px solid rgba(245,240,232,0.08)",
+        borderRadius: "14px",
+        padding: "40px 30px",
+        transition: "all 0.35s ease",
+        backdropFilter: "blur(12px)",
+        ...style,
+      }}
+    >
+      <CornerAccent
+        className="absolute top-3 left-3 w-5 h-5"
+        style={{ opacity: isHovered ? 1 : 0, transition: "opacity 0.3s ease" }}
+      />
+      <CornerAccent
+        className="absolute bottom-3 right-3 w-5 h-5"
+        flip
+        style={{ opacity: isHovered ? 1 : 0, transition: "opacity 0.3s ease" }}
+      />
+
+      {/* Icon Container - Centré par items-center sur le parent */}
+      <div
+        className="w-14 h-14 rounded-full flex items-center justify-center mb-6 flex-shrink-0"
+        style={{
+          background: isHovered
+            ? "rgba(184,151,58,0.25)"
+            : "rgba(184,151,58,0.1)",
+          border: "1px solid rgba(184,151,58,0.3)",
+          transition: "all 0.3s ease",
+          boxShadow: isHovered ? "0 0 20px rgba(184,151,58,0.2)" : "none",
+        }}
+      >
+        <service.icon className="h-6 w-6" style={{ color: "#b8973a" }} />
+      </div>
+
+      {/* Title */}
+      <h3
+        className="text-xl font-semibold mb-4 leading-snug"
+        style={{
+          fontFamily: "'Playfair Display', serif",
+          color: isHovered ? "#e4c668" : "#f5f0e8",
+          transition: "color 0.3s ease",
+        }}
+      >
+        {t(service.titleKey)}
+      </h3>
+
+      {/* Gold separator - Centré horizontalement */}
+      <div
+        className="mb-5 mx-auto"
+        style={{
+          height: "1px",
+          width: isHovered ? "60px" : "30px",
+          background:
+            "linear-gradient(to right, transparent, #b8973a, transparent)",
+          transition: "width 0.35s ease",
+        }}
+      />
+
+      {/* Description */}
+      <p
+        className="text-sm leading-relaxed mb-2 opacity-80"
+        style={{ color: "rgba(245,240,232,0.7)" }}
+      >
+        {t(service.descKey)}
+      </p>
+    </motion.div>
+  );
+};
+
 const ServicesSection: React.FC = () => {
   const { t } = useLanguage();
+  const [hovered, setHovered] = useState<number | null>(null);
+
+  const mainServices = services.slice(0, 9);
+  const lastService = services[9];
 
   return (
-    <section id="services" className="py-24 bg-gradient-navy">
-      <div className="container mx-auto px-4 lg:px-8">
+    <section
+      id="services"
+      className="relative py-28 overflow-hidden bg-[#0b0f1a]"
+    >
+      {/* Texture de fond discrète */}
+      <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]" />
+
+      <div className="relative z-10 container mx-auto px-4 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          {/* Header */}
+          {/* ── Header ── */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            transition={{ duration: 0.7 }}
+            className="text-center mb-20"
           >
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="h-px w-12 bg-accent" />
-              <span className="text-accent text-sm font-semibold tracking-widest uppercase">
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="h-px w-12 bg-gradient-to-r from-transparent to-[#b8973a]" />
+              <span className="text-xs font-bold tracking-[0.3em] uppercase text-[#b8973a]">
                 {t("services_label")}
               </span>
-              <div className="h-px w-12 bg-accent" />
+              <div className="h-px w-12 bg-gradient-to-l from-transparent to-[#b8973a]" />
             </div>
-            <h2 className="text-3xl lg:text-5xl font-heading font-bold text-secondary mb-4">
+
+            <h2
+              className="text-4xl lg:text-6xl font-bold mb-6 text-[#f5f0e8]"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
               {t("services_title")}
             </h2>
-            <p className="text-secondary/60 text-lg max-w-2xl mx-auto">
+
+            <p className="text-base lg:text-lg max-w-2xl mx-auto text-secondary/50 leading-relaxed">
               {t("services_subtitle")}
             </p>
           </motion.div>
 
-          {/* Services grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-            {services.map((service, i) => (
-              <motion.div
+          {/* ── Grid 9 items ── */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+            {mainServices.map((service, i) => (
+              <ServiceCard
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.07 }}
-                className="group p-6 rounded-lg bg-navy-light/50 border border-secondary/10 hover:border-accent/30 transition-all duration-300 hover:bg-navy-light/80"
-              >
-                <div className="w-11 h-11 rounded-md bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
-                  <service.icon className="h-5 w-5 text-accent" />
-                </div>
-                <h3 className="text-lg font-heading font-semibold text-secondary mb-2">
-                  {t(service.titleKey)}
-                </h3>
-                <p className="text-secondary/50 text-sm leading-relaxed mb-3 line-clamp-3">
-                  {t(service.descKey)}
-                </p>
-                <button className="flex items-center gap-2 text-accent text-sm font-medium group-hover:gap-3 transition-all">
-                  {t("services_cta")}
-                  <ArrowRight className="h-3.5 w-3.5 rtl-flip" />
-                </button>
-              </motion.div>
+                service={service}
+                i={i}
+                hovered={hovered}
+                setHovered={setHovered}
+                t={t}
+              />
             ))}
+          </div>
+
+          {/* ── Last item centered ── */}
+          <div className="flex justify-center">
+            <div className="w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
+              <ServiceCard
+                service={lastService}
+                i={9}
+                hovered={hovered}
+                setHovered={setHovered}
+                t={t}
+              />
+            </div>
           </div>
         </div>
       </div>
