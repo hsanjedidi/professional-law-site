@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, ShieldCheck } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+// 1. Import de l'image pour mobile
+import heroMobileBg from "@/assets/hero-bg1.png";
 
 const HeroSection: React.FC = () => {
   const { t } = useLanguage();
@@ -23,16 +25,28 @@ const HeroSection: React.FC = () => {
     >
       {/* Background Layer */}
       <div className="absolute inset-0">
+        {/* Image pour Mobile (affichée par défaut, cachée sur desktop) */}
+        <motion.img
+          initial={{ scale: 1.05 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.2 }}
+          src={heroMobileBg}
+          alt="Cabinet d'avocats"
+          className="w-full h-full object-cover object-center block md:hidden"
+        />
+
+        {/* Image pour Desktop (cachée par défaut, affichée à partir de md:) */}
         <motion.img
           initial={{ scale: 1.05 }}
           animate={{ scale: 1 }}
           transition={{ duration: 1.2 }}
           src={heroBg}
           alt="Cabinet d'avocats"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-center hidden md:block"
         />
-        <div className="absolute inset-0 bg-gradient-hero opacity-90" />
-        <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-navy-dark/95 via-navy-dark/80 to-transparent" />
+
+        <div className="absolute inset-0 " />
+        <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-navy-dark/25 via-navy-dark/70 to-transparent" />
       </div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
@@ -56,13 +70,8 @@ const HeroSection: React.FC = () => {
             transition={{ delay: 0.2 }}
             className="text-2xl sm:text-4xl md:text-7xl font-heading font-bold leading-tight mb-6"
           >
-       <span className="text-secondary">
-    {t("hero_title_1")}
-  </span>
-  {" "}
-  <span className="text-gradient-gold">
-    {t("hero_title_2")}
-  </span>
+            <span className="text-secondary">{t("hero_title_1")}</span>{" "}
+            <span className="text-gradient-gold">{t("hero_title_2")}</span>
           </motion.h1>
 
           {/* Subtitle - Taille standard (base) pour plus de sérieux */}

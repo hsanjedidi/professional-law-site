@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
               className="relative z-10 transition-transform duration-500 hover:scale-105"
             >
               <img
-                src="/logo.png"
+                src="/log2.png"
                 alt="Logo"
                 className="h-48 md:h-64 w-auto object-contain brightness-110"
               />

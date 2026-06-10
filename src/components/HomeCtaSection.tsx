@@ -42,7 +42,7 @@ const HomeCtaSection: React.FC = () => {
               </span>
               <div className="h-px w-10 bg-accent" />
             </div>
-            <h2 className="text-4xl lg:text-5xl text-black font-heading font-bold text-secondary mb-6 leading-tight">
+            <h2 className="text-4xl lg:text-5xl text-black font-heading font-bold  mb-6 leading-tight">
               {t("home_cta_title")}
             </h2>
             <p className="text-blue-950 text-lg leading-relaxed mb-10 max-w-xl mx-auto">

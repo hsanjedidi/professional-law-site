@@ -16,13 +16,13 @@ const ContactSection: React.FC = () => {
       icon: Phone,
       title: t("contact_phone_title"),
       value: t("contact_phone_value"),
-      href: "tel:+21671840381",
+      href: "tel:71840381",
     },
     {
       icon: Smartphone,
       title: t("contact_mobile_title"),
       value: t("contact_mobile_value"),
-      href: "tel:+21620575291",
+      href: "tel:71840376",
     },
     {
       icon: Mail,
@@ -63,7 +63,8 @@ const ContactSection: React.FC = () => {
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-5 gap-12">
+          {/* Form and Info Grid */}
+          <div className="grid lg:grid-cols-5 gap-12 mb-12">
             {/* Form */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -160,7 +161,6 @@ const ContactSection: React.FC = () => {
                     {info.href ? (
                       <a
                         href={info.href}
-                        // Ajout de dir="ltr" et inline-block pour stabiliser l'affichage
                         className="text-sm text-muted-foreground hover:text-accent transition-colors inline-block"
                         dir="ltr"
                       >
@@ -176,6 +176,24 @@ const ContactSection: React.FC = () => {
               ))}
             </motion.div>
           </div>
+
+          {/* Map Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="w-full h-[400px] rounded-lg overflow-hidden border border-border shadow-sm"
+          >
+            <iframe
+              title="Google Maps"
+              src="https://www.google.com/maps?q=89+Avenue+Mohamed+V+Tunis+Tunisia&output=embed"
+              className="w-full h-full border-0"
+              allowFullScreen={false}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </motion.div>
         </div>
       </div>
     </section>
