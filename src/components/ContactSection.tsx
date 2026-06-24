@@ -187,7 +187,7 @@ const ContactSection: React.FC = () => {
           >
             <iframe
               title="Google Maps"
-              src="https://www.google.com/maps?q=89+Avenue+Mohamed+V+Tunis+Tunisia&output=embed"
+              src="https://www.google.com/maps?q=89+Rue+Ibn+Rachiq+Tunis+Tunisia&output=embed"
               className="w-full h-full border-0"
               allowFullScreen={false}
               loading="lazy"
