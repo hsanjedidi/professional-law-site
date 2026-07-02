@@ -2,7 +2,7 @@ import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion } from "framer-motion";
 import { Briefcase, GraduationCap, Languages } from "lucide-react";
-import yosrPhoto from "@/assets/yosr-ben-attia.jpg";
+import yosrPhoto from "@/assets/yoser.jpeg";
 
 /* ─── Legal background SVG icons ─────────────────────────────────────── */
 const ScalesIcon = () => (

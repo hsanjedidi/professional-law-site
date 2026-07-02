@@ -11,27 +11,34 @@ import Footer from "@/components/Footer";
 
 const seoData = {
   fr: {
-    title: "Me. Yosr Ben Attia | Avocate au Barreau de Tunis",
-    description: "Maître Yosr Ben Attia, avocate à Tunis spécialisée en droit des affaires, droit bancaire, droit numérique, protection des données, arbitrage et médiation.",
-    keywords: "avocate tunis, droit des affaires, droit bancaire, protection des données, arbitrage, médiation, droit numérique, Yosr Ben Attia",
+    title: "Me. Yoser Ben Attia | Avocate au Barreau de Tunis",
+    description:
+      "Maître Yoser Ben Attia, avocate à Tunis spécialisée en droit des affaires, droit bancaire, droit numérique, protection des données, arbitrage et médiation.",
+    keywords:
+      "avocate tunis, droit des affaires, droit bancaire, protection des données, arbitrage, médiation, droit numérique, Yoser Ben Attia",
   },
   en: {
-    title: "Me. Yosr Ben Attia | Lawyer at the Tunis Bar",
-    description: "Maître Yosr Ben Attia, Tunis-based lawyer specializing in business law, banking law, digital law, data protection, arbitration and mediation.",
-    keywords: "tunis lawyer, business law, banking law, data protection, arbitration, mediation, digital law, Yosr Ben Attia",
+    title: "Me. Yoser Ben Attia | Lawyer at the Tunis Bar",
+    description:
+      "Maître Yoser Ben Attia, Tunis-based lawyer specializing in business law, banking law, digital law, data protection, arbitration and mediation.",
+    keywords:
+      "tunis lawyer, business law, banking law, data protection, arbitration, mediation, digital law, Yoser Ben Attia",
   },
   ar: {
     title: "الأستاذة يسر بن عطية | محامية بهيئة المحامين بتونس",
-    description: "الأستاذة يسر بن عطية، محامية في تونس متخصصة في قانون الأعمال والقانون البنكي والقانون الرقمي وحماية البيانات والتحكيم والوساطة.",
-    keywords: "محامية تونس, قانون الأعمال, قانون بنكي, حماية البيانات, تحكيم, وساطة",
+    description:
+      "الأستاذة يسر بن عطية، محامية في تونس متخصصة في قانون الأعمال والقانون البنكي والقانون الرقمي وحماية البيانات والتحكيم والوساطة.",
+    keywords:
+      "محامية تونس, قانون الأعمال, قانون بنكي, حماية البيانات, تحكيم, وساطة",
   },
 };
 
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "LegalService",
-  name: "Me. Yosr Ben Attia",
-  description: "Avocate au Barreau de Tunis - Droit des affaires, bancaire, numérique et résolution des litiges",
+  name: "Me. Yoser Ben Attia",
+  description:
+    "Avocate au Barreau de Tunis - Droit des affaires, bancaire, numérique et résolution des litiges",
   url: "https://yosrbenattia.tn",
   telephone: "+21671840381",
   address: {
@@ -55,7 +62,6 @@ const Index: React.FC = () => {
   return (
     <>
       <Helmet>
-       
         <title>{seo.title}</title>
         <meta name="description" content={seo.description} />
         <meta name="keywords" content={seo.keywords} />

@@ -65,13 +65,13 @@ const Footer: React.FC = () => {
                   </span>
                 </a>
                 <a
-                  href="mailto:yosr.benattia@gnet.tn"
+                  href="mailto:yosr.benattia@benattialaw.com"
                   className="flex items-center justify-center md:justify-start gap-3 text-secondary/70 hover:text-accent transition-all duration-300 group text-sm"
                 >
                   <span className="p-2 rounded-full bg-accent/5 group-hover:bg-accent/10 transition-colors">
                     <Mail className="h-4 w-4 text-accent" />
                   </span>
-                  yosr.benattia@gnet.tn
+                  yosr.benattia@benattialaw.com
                 </a>
               </div>
             </div>
@@ -121,7 +121,7 @@ const Footer: React.FC = () => {
           {/* Bottom bar */}
           <div className="mt-20 pt-8 border-t border-accent/10 flex flex-col sm:flex-row items-center justify-between gap-6">
             <p className="text-[10px] uppercase tracking-[0.2em] text-secondary/40">
-              © {new Date().getFullYear()} Me. Yosr Ben Attia.{" "}
+              © {new Date().getFullYear()} Me. Yoser Ben Attia.{" "}
               {t("footer_rights")} by{" "}
               <a
                 href="https://technoshark.org"
