@@ -20,7 +20,6 @@ const ContactSection: React.FC = () => {
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  console.log("rab om email :", import.meta.env.RECIPIENT);
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
