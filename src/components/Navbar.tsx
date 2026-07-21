@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
           <Link to="/" className="flex items-center gap-3 group">
             <div className="w-auto h-48  transition-all duration-300">
               <img
-                src={scrolled ? "/logo-Photoroom.png" : "/logo.png"}
+                src={scrolled ? "/log1.png" : "/log2.png"}
                 alt="Logo Me. Yosr Ben Attia"
                 className="h-full w-auto object-contain transition-opacity duration-300"
               />
@@ -98,28 +98,33 @@ const Navbar: React.FC = () => {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-card/98 backdrop-blur-lg border-b border-border overflow-hidden"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
+            // CHANGEMENT : Fond sombre "Navy", flou prononcé et bordure d'accentuation
+            className="lg:hidden absolute top-full inset-x-0 bg-navy-dark bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-navy/40 via-navy-dark to-navy-dark backdrop-blur-xl border-b border-accent/20 shadow-2xl"
           >
-            <div className="container mx-auto px-4 py-4 flex flex-col gap-2">
+            <div className="container mx-auto px-6 py-8 flex flex-col gap-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
-                  className={`text-start py-3 px-4 rounded-md font-medium transition-colors ${
+                  className={`text-start py-4 px-4 rounded-sm font-medium transition-all duration-300 ${
                     isActive(link.to)
-                      ? "bg-accent/10 text-accent"
-                      : "text-foreground/80 hover:bg-accent/10 hover:text-accent"
+                      ? "bg-accent/10 text-accent translate-x-2 rtl:-translate-x-2"
+                      : "text-secondary/80 hover:text-accent hover:bg-white/5"
                   }`}
                 >
                   {link.label}
                 </Link>
               ))}
+
+              <div className="h-px w-full bg-gradient-to-r from-transparent via-accent/20 to-transparent my-4" />
+
               <Link
                 to="/contact"
-                className="mt-2 py-3 px-4 bg-accent text-accent-foreground rounded-md font-semibold text-center"
+                className="py-4 px-4 bg-accent text-navy-dark rounded-sm font-bold text-center shadow-lg hover:brightness-110 active:scale-95 transition-all"
               >
                 {t("nav_consultation")}
               </Link>

@@ -118,6 +118,9 @@ type TranslationKeys = {
   contact_email_value: string;
   contact_hours_title: string;
   contact_hours_value: string;
+  contact_sending: string;
+  contact_error_message: string;
+  contact_success_message: string;
 
   // Footer
   footer_description: string;
@@ -133,13 +136,13 @@ const translations: Record<Language, TranslationKeys> = {
   fr: {
     page_hero_about_title: "À Propos",
     page_hero_about_subtitle:
-      "Découvrez le parcours, les qualifications et l'engagement de Maître Yosr Ben Attia.",
+      "Découvrez le parcours, les qualifications et l'engagement de Maître Yoser Ben Attia.",
     page_hero_services_title: "Domaines d'Intervention",
     page_hero_services_subtitle:
       "Un accompagnement juridique de haut niveau dans tous les domaines stratégiques du droit.",
     page_hero_contact_title: "Contactez-Nous",
     page_hero_contact_subtitle:
-      "Prenez rendez-vous pour une consultation confidentielle avec Maître Yosr Ben Attia.",
+      "Prenez rendez-vous pour une consultation confidentielle avec Maître Yoser Ben Attia.",
     home_why_label: "Pourquoi Nous Choisir",
     home_why_title: "Un Accompagnement Juridique d'Excellence",
     home_why_1_title: "Expertise Pluridisciplinaire",
@@ -153,7 +156,7 @@ const translations: Record<Language, TranslationKeys> = {
       "Avocate au Barreau de Tunis, ancienne cadre bancaire, avec une solide expérience académique.",
     home_cta_title: "Besoin d'un Conseil Juridique ?",
     home_cta_subtitle:
-      "Contactez Maître Yosr Ben Attia pour une consultation confidentielle. Expertise en droit des affaires, bancaire, numérique et résolution des litiges.",
+      "Contactez Maître Yoser Ben Attia pour une consultation confidentielle. Expertise en droit des affaires, bancaire, numérique et résolution des litiges.",
     home_cta_btn: "Prendre Rendez-vous",
     nav_home: "Accueil",
     nav_about: "À Propos",
@@ -162,10 +165,10 @@ const translations: Record<Language, TranslationKeys> = {
     nav_consultation: "Consultation",
 
     hero_label: "Avocate au Barreau de Tunis",
-    hero_title_1: "Maître Yosr",
+    hero_title_1: "Maître Yoser",
     hero_title_2: "Ben Attia",
     hero_subtitle:
-      "Conseil juridique de confiance en droit des affaires, droit bancaire, droit numérique et résolution des litiges. Maître Yosr Ben Attia accompagne les entreprises, les institutions, les ONG et les investisseurs avec une approche rigoureuse, stratégique et pragmatique.",
+      "Conseil juridique de confiance en droit des affaires, droit bancaire, droit numérique et résolution des litiges. Maître Yoser Ben Attia accompagne les entreprises, les institutions, les ONG et les investisseurs avec une approche rigoureuse, stratégique et pragmatique.",
     hero_cta: "Prendre Rendez-vous",
     hero_cta_secondary: "Domaines d'Intervention",
 
@@ -175,9 +178,9 @@ const translations: Record<Language, TranslationKeys> = {
     hero_trust_4: "Protection des Données",
 
     about_label: "À Propos",
-    about_title: "Maître Yosr Ben Attia",
+    about_title: "Maître Yoser Ben Attia",
     about_description:
-      "Maître Yosr Ben Attia est avocate inscrite au Barreau de Tunis depuis 2013. Elle conjugue pratique juridique, expérience antérieure en conformité bancaire, enseignement universitaire et formation juridique avancée en droit des affaires, arbitrage, protection des données et droit foncier.",
+      "Maître Yoser Ben Attia est avocate inscrite au Barreau de Tunis depuis 2013. Elle conjugue pratique juridique, expérience antérieure en conformité bancaire, enseignement universitaire et formation juridique avancée en droit des affaires, arbitrage, protection des données et droit foncier.",
     about_experience_title: "Expérience Professionnelle",
     about_experience_desc:
       "Avocate depuis 2013. Ancienne cadre au Département Inspection et Contrôle de la Conformité à la Banque de Tunisie et des Emirats (2008-2013). Ancienne enseignante dans plusieurs établissements d'enseignement supérieur tunisiens en matières de droit privé.",
@@ -234,7 +237,7 @@ const translations: Record<Language, TranslationKeys> = {
     contact_label: "Contact",
     contact_title: "Contactez-Nous",
     contact_subtitle:
-      "Vous avez besoin d'un conseil juridique ? Contactez Maître Yosr Ben Attia pour une consultation en toute confidentialité.",
+      "Vous avez besoin d'un conseil juridique ? Contactez Maître Yoser Ben Attia pour une consultation en toute confidentialité.",
     contact_name: "Nom complet",
     contact_email: "Adresse e-mail",
     contact_phone: "Téléphone",
@@ -242,20 +245,23 @@ const translations: Record<Language, TranslationKeys> = {
     contact_message: "Votre message",
     contact_send: "Envoyer le message",
     contact_address_title: "Cabinet",
-    contact_address: "Tunis, Tunisie",
+    contact_address: "89 Ave Mohamed V, Tunis, Tunisie",
     contact_phone_title: "Téléphone",
-    contact_phone_value: "(+216) 71 840 381",
+    contact_phone_value: " 71 840 381",
     contact_mobile_title: "Mobile",
-    contact_mobile_value: "(+216) 20 575 291",
+    contact_mobile_value: " +216 20 575 291",
     contact_fax_title: "Fax",
-    contact_fax_value: "(+216) 71 840 376",
+    contact_fax_value: " 71 840 376",
     contact_email_title: "Email",
-    contact_email_value: "yosr.benattia@gnet.tn",
+    contact_email_value: "yosr.benattia@benattialaw.com",
     contact_hours_title: "Horaires",
     contact_hours_value: "Lun - Ven : 9h00 - 18h00",
+    contact_sending: "Envoi...",
+    contact_error_message: "Une erreur est survenue. Veuillez réessayer.",
+    contact_success_message: "Message envoyé avec succès !",
 
     footer_description:
-      "Avocate au Barreau de Tunis, Maître Yosr Ben Attia offre un accompagnement juridique de haut niveau en droit des affaires, bancaire, numérique et résolution des litiges.",
+      "Avocate au Barreau de Tunis, Maître Yoser Ben Attia offre un accompagnement juridique de haut niveau en droit des affaires, bancaire, numérique et résolution des litiges.",
     footer_links: "Liens Rapides",
     footer_legal: "Mentions Légales",
     footer_privacy: "Politique de Confidentialité",
@@ -266,13 +272,13 @@ const translations: Record<Language, TranslationKeys> = {
   en: {
     page_hero_about_title: "About",
     page_hero_about_subtitle:
-      "Discover the background, qualifications, and commitment of Maître Yosr Ben Attia.",
+      "Discover the background, qualifications, and commitment of Maître Yoser Ben Attia.",
     page_hero_services_title: "Practice Areas",
     page_hero_services_subtitle:
       "High-level legal counsel across all strategic areas of law.",
     page_hero_contact_title: "Contact Us",
     page_hero_contact_subtitle:
-      "Schedule a confidential consultation with Maître Yosr Ben Attia.",
+      "Schedule a confidential consultation with Maître Yoser Ben Attia.",
     home_why_label: "Why Choose Us",
     home_why_title: "Excellence in Legal Counsel",
     home_why_1_title: "Multidisciplinary Expertise",
@@ -286,7 +292,7 @@ const translations: Record<Language, TranslationKeys> = {
       "Lawyer registered with the Tunis Bar, former banking executive, with solid academic experience.",
     home_cta_title: "Need Legal Advice?",
     home_cta_subtitle:
-      "Contact Maître Yosr Ben Attia for a confidential consultation. Expertise in business law, banking, digital law, and dispute resolution.",
+      "Contact Maître Yoser Ben Attia for a confidential consultation. Expertise in business law, banking, digital law, and dispute resolution.",
     home_cta_btn: "Book a Consultation",
     nav_home: "Home",
     nav_about: "About",
@@ -295,10 +301,10 @@ const translations: Record<Language, TranslationKeys> = {
     nav_consultation: "Consultation",
 
     hero_label: "Lawyer at the Tunis Bar",
-    hero_title_1: "Maître Yosr",
+    hero_title_1: "Maître Yoser",
     hero_title_2: "Ben Attia",
     hero_subtitle:
-      "Trusted legal counsel in business, banking, digital law and dispute resolution. Maître Yosr Ben Attia supports companies, institutions, NGOs and investors with rigorous, strategic and practical legal advice.",
+      "Trusted legal counsel in business, banking, digital law and dispute resolution. Maître Yoser Ben Attia supports companies, institutions, NGOs and investors with rigorous, strategic and practical legal advice.",
     hero_cta: "Book a Consultation",
     hero_cta_secondary: "Practice Areas",
 
@@ -308,9 +314,9 @@ const translations: Record<Language, TranslationKeys> = {
     hero_trust_4: "Data Protection",
 
     about_label: "About",
-    about_title: "Maître Yosr Ben Attia",
+    about_title: "Maître Yoser Ben Attia",
     about_description:
-      "Maître Yosr Ben Attia is a lawyer registered with the Tunis Bar since 2013. She combines legal practice, prior banking compliance experience, academic teaching, and advanced legal training in business law, arbitration, data protection and real estate law.",
+      "Maître Yoser Ben Attia is a lawyer registered with the Tunis Bar since 2013. She combines legal practice, prior banking compliance experience, academic teaching, and advanced legal training in business law, arbitration, data protection and real estate law.",
     about_experience_title: "Professional Experience",
     about_experience_desc:
       "Lawyer since 2013. Former compliance and inspection executive at Banque de Tunisie et des Emirats (2008-2013). Former lecturer in several Tunisian higher education institutions in private law disciplines.",
@@ -367,7 +373,7 @@ const translations: Record<Language, TranslationKeys> = {
     contact_label: "Contact",
     contact_title: "Contact Us",
     contact_subtitle:
-      "Need legal advice in corporate, banking, digital or dispute matters? Contact Maître Yosr Ben Attia for a confidential consultation.",
+      "Need legal advice in corporate, banking, digital or dispute matters? Contact Maître Yoser Ben Attia for a confidential consultation.",
     contact_name: "Full Name",
     contact_email: "Email Address",
     contact_phone: "Phone",
@@ -375,20 +381,23 @@ const translations: Record<Language, TranslationKeys> = {
     contact_message: "Your Message",
     contact_send: "Send Message",
     contact_address_title: "Office",
-    contact_address: "Tunis, Tunisia",
+    contact_address: "89 Ave Mohamed V, Tunis, Tunisia",
     contact_phone_title: "Phone",
-    contact_phone_value: "(+216) 71 840 381",
+    contact_phone_value: " 71 840 381",
     contact_mobile_title: "Mobile",
-    contact_mobile_value: "(+216) 20 575 291",
+    contact_mobile_value: "+216 20 575 291",
     contact_fax_title: "Fax",
-    contact_fax_value: "(+216) 71 840 376",
+    contact_fax_value: " 71 840 376",
     contact_email_title: "Email",
-    contact_email_value: "yosr.benattia@gnet.tn",
+    contact_email_value: "yosr.benattia@benattialaw.com",
     contact_hours_title: "Hours",
     contact_hours_value: "Mon - Fri: 9:00 AM - 6:00 PM",
+    contact_sending: "Sending...",
+    contact_error_message: "An error occurred. Please try again.",
+    contact_success_message: "Message sent successfully!",
 
     footer_description:
-      "Lawyer at the Tunis Bar, Maître Yosr Ben Attia provides high-level legal counsel in business law, banking, digital law and dispute resolution.",
+      "Lawyer at the Tunis Bar, Maître Yoser Ben Attia provides high-level legal counsel in business law, banking, digital law and dispute resolution.",
     footer_links: "Quick Links",
     footer_legal: "Legal Notice",
     footer_privacy: "Privacy Policy",
@@ -507,17 +516,20 @@ const translations: Record<Language, TranslationKeys> = {
     contact_message: "رسالتك",
     contact_send: "إرسال الرسالة",
     contact_address_title: "المكتب",
-    contact_address: "تونس، تونس",
+    contact_address: "89 شارع محمد الخامس، تونس، تونس",
     contact_phone_title: "الهاتف",
-    contact_phone_value: "(+216) 71 840 381",
+    contact_phone_value: " 71 840 381",
     contact_mobile_title: "الجوال",
-    contact_mobile_value: "(+216) 20 575 291",
+    contact_mobile_value: " +216 20 575 291",
     contact_fax_title: "الفاكس",
-    contact_fax_value: "(+216) 71 840 376",
+    contact_fax_value: " 71 840 376",
     contact_email_title: "البريد الإلكتروني",
-    contact_email_value: "yosr.benattia@gnet.tn",
+    contact_email_value: "yosr.benattia@benattialaw.com",
     contact_hours_title: "ساعات العمل",
     contact_hours_value: "الإثنين - الجمعة: 9:00 - 18:00",
+    contact_sending: "جاري الإرسال...",
+    contact_error_message: "حدث خطأ. يرجى المحاولة مرة أخرى.",
+    contact_success_message: "تم إرسال الرسالة بنجاح!",
 
     footer_description:
       "محامية بهيئة المحامين بتونس، الأستاذة يسر بن عطية تقدم استشارات قانونية عالية المستوى في قانون الأعمال والبنوك والقانون الرقمي وتسوية النزاعات.",
