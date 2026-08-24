@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
           <Link to="/" className="flex items-center gap-3 group">
             <div className="w-auto h-48  transition-all duration-300">
               <img
-                src={scrolled ? "/log1.png" : "/log2.png"}
+                src={scrolled ? "/log22.png" : "/log11.png"}
                 alt="Logo Me. Yosr Ben Attia"
                 className="h-full w-auto object-contain transition-opacity duration-300"
               />
