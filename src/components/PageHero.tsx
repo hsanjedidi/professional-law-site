@@ -80,7 +80,7 @@ const PageHero: React.FC<PageHeroProps> = ({
         >
           <div className="h-px w-8 md:w-10 bg-accent" />
           <span className="text-accent text-[10px] md:text-xs font-semibold tracking-[0.2em] uppercase">
-            Me. Yoser Ben Attia
+            Me. Yosr Ben Attia
           </span>
         </motion.div>
 

@@ -121,7 +121,7 @@ const Footer: React.FC = () => {
           {/* Bottom bar */}
           <div className="mt-20 pt-8 border-t border-accent/10 flex flex-col sm:flex-row items-center justify-between gap-6">
             <p className="text-[10px] uppercase tracking-[0.2em] text-secondary/40">
-              © {new Date().getFullYear()} Me. Yoser Ben Attia.{" "}
+              © {new Date().getFullYear()} Me. Yosr Ben Attia.{" "}
               {t("footer_rights")} by{" "}
               <a
                 href="https://technoshark.org"
@@ -131,7 +131,7 @@ const Footer: React.FC = () => {
               >
                 Techno Shark
               </a>{" "}
-              with ❤️
+            
             </p>
           </div>
         </div>
