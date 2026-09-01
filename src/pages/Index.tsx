@@ -11,18 +11,18 @@ import Footer from "@/components/Footer";
 
 const seoData = {
   fr: {
-    title: "Me. Yoser Ben Attia | Avocate au Barreau de Tunis",
+    title: "Me. Yosr Ben Attia | Avocate au Barreau de Tunis",
     description:
-      "Maître Yoser Ben Attia, avocate à Tunis spécialisée en droit des affaires, droit bancaire, droit numérique, protection des données, arbitrage et médiation.",
+      "Maître Yosr Ben Attia, avocate à Tunis spécialisée en droit des affaires, droit bancaire, droit numérique, protection des données, arbitrage et médiation.",
     keywords:
-      "avocate tunis, droit des affaires, droit bancaire, protection des données, arbitrage, médiation, droit numérique, Yoser Ben Attia",
+      "avocate tunis, droit des affaires, droit bancaire, protection des données, arbitrage, médiation, droit numérique, Yosr Ben Attia",
   },
   en: {
-    title: "Me. Yoser Ben Attia | Lawyer at the Tunis Bar",
+    title: "Me. Yosr Ben Attia | Lawyer at the Tunis Bar",
     description:
-      "Maître Yoser Ben Attia, Tunis-based lawyer specializing in business law, banking law, digital law, data protection, arbitration and mediation.",
+      "Maître Yosr Ben Attia, Tunis-based lawyer specializing in business law, banking law, digital law, data protection, arbitration and mediation.",
     keywords:
-      "tunis lawyer, business law, banking law, data protection, arbitration, mediation, digital law, Yoser Ben Attia",
+      "tunis lawyer, business law, banking law, data protection, arbitration, mediation, digital law, Yosr Ben Attia",
   },
   ar: {
     title: "الأستاذة يسر بن عطية | محامية بهيئة المحامين بتونس",
@@ -36,7 +36,7 @@ const seoData = {
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "LegalService",
-  name: "Me. Yoser Ben Attia",
+  name: "Me. Yosr Ben Attia",
   description:
     "Avocate au Barreau de Tunis - Droit des affaires, bancaire, numérique et résolution des litiges",
   url: "https://yosrbenattia.tn",
